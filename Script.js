@@ -2,50 +2,57 @@ $(document).ready(function () {
 
 //Create random numbers between 19 - 120 Asign the number to the id in html
 
-    var randomNumber = function () {
+    let randomNumber = function () {
         return Math.floor((Math.random() * 102) + 19);
     };
-    var number = randomNumber();
+    let number = randomNumber();
     $("#numberToMatch").text(number);
 
 
     //Declare variables for Score
 
-    var wins = 0;
-    var losses = 0;
-    var totalScore = 0;
+    let wins = 0;
+    let losses = 0;
+    let totalScore = 0;
 
 
     //Create random numbers between 1 - 12 for each Crystal defining a variable. Asign them to each Crystal in html
 
 
-    var randomBlue = function () {
+    let randomBlue = function () {
         return Math.floor((Math.random() * 12) + 1);
     };
-    var blueGem = randomBlue();
+    let blueGem = randomBlue();
+    // noinspection JSJQueryEfficiency
     $("#blueGem").html(blueGem);
 
-    var randomPurple = function () {
+    let randomPurple = function () {
         return Math.floor((Math.random() * 12) + 1);
     };
-    var purpleGem = randomBlue();
+    let purpleGem = randomBlue();
+    // noinspection JSJQueryEfficiency
     $("#purpleGem").html(purpleGem);
 
-    var randomYellow = function () {
+    let randomYellow = function () {
         return Math.floor((Math.random() * 12) + 1);
     };
-    var opalGem = randomBlue();
+    let opalGem = randomBlue();
+    // noinspection JSJQueryEfficiency
     $("#opalGem").html(opalGem);
 
-    var randomDiamon = function () {
+    let randomdiamond;
+    randomdiamond = function () {
         return Math.floor((Math.random() * 12) + 1);
     };
-    var diamondGem = randomBlue();
+    let diamondGem = randomBlue();
+    // noinspection JSJQueryEfficiency
+    // noinspection JSJQueryEfficiency
     $("#diamond ").html(diamondGem);
 
 
     //set up click for jewels
 
+    // noinspection JSJQueryEfficiency
     $("#blueGem").click(function () {
         totalScore = totalScore + blueGem;
         $("#totalScore").text(totalScore);
@@ -53,6 +60,7 @@ $(document).ready(function () {
 
     });
 
+    // noinspection JSJQueryEfficiency
     $("#purpleGem").click(function () {
         totalScore = totalScore + purpleGem;
         $("#totalScore").text(totalScore);
@@ -60,6 +68,7 @@ $(document).ready(function () {
 
     });
 
+    // noinspection JSJQueryEfficiency
     $("#opalGem").click(function () {
         totalScore = totalScore + opalGem;
         $("#totalScore").text(totalScore);
@@ -67,7 +76,8 @@ $(document).ready(function () {
 
     });
 
-    $("#diamondGem ").click(function () {
+    // noinspection JSJQueryEfficiency
+    $("#diamond ").click(function () {
         totalScore = totalScore + diamondGem;
         $("#totalScore").text(totalScore);
         winLose(totalScore, number);
@@ -106,13 +116,13 @@ $(document).ready(function () {
             number = randomNumber();
             $("#numberToMatch").text(number);
             blueGem = randomBlue();
-            $("#green").html(blueGem);
+            $("#blueGem").html(blueGem);
             blueGem = randomBlue();
-            $("#purple").html(purpleGem);
+            $("#purpleGem").html(purpleGem);
             purpleGem = randomBlue();
-            $("#yellow").html(diamondGem);
+            $("#opalGem").html(opalGem);
             opalGem = randomBlue();
-            $("#red").html(opalGem);
+            $("#diamond ").html(diamondGem);
 
         }
     }
